@@ -10,7 +10,7 @@ body {
     color: #222;
 }
 
-/* NAV */
+/* ================= PC PADRÃO ================= */
 
 header {
     padding: 30px 60px;
@@ -47,48 +47,39 @@ nav a:hover {
     color: white;
 }
 
-/* HERO */
+/* HERO GRANDE (PC) */
 
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 80px 60px;
+    padding: 100px 80px; /* 👈 maior */
 }
 
 .left {
-    max-width: 500px;
-}
-
-.hello {
-    color: #888;
-    margin-bottom: 20px;
+    max-width: 550px;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 52px; /* 👈 maior */
     margin-bottom: 20px;
 }
 
-h1 span {
-    color: red;
-}
-
 .desc {
-    color: #666;
-    margin-bottom: 30px;
+    font-size: 18px; /* 👈 maior */
 }
 
 /* BOTÕES */
 
 .btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 14px 28px;
     background: red;
     color: white;
     text-decoration: none;
     border-radius: 6px;
-    margin-top: 15px;
+    margin-top: 20px;
+    font-size: 16px;
     transition: 0.3s;
 }
 
@@ -103,15 +94,15 @@ h1 span {
 /* IMAGEM */
 
 .right img {
-    width: 350px;
+    width: 400px; /* 👈 maior */
     border-radius: 10px;
 }
 
 /* PÁGINAS */
 
 .page {
-    padding: 60px;
-    max-width: 1100px;
+    padding: 80px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -119,8 +110,8 @@ h1 span {
 
 .card {
     background: white;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 30px;
+    margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     transition: 0.3s;
@@ -155,22 +146,12 @@ h1 span {
 }
 
 .form-contato textarea {
-    min-height: 140px;
-}
-
-.form-contato input:focus,
-.form-contato textarea:focus {
-    outline: none;
-    border-color: red;
+    min-height: 150px;
 }
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-
-    body {
-        overflow-x: hidden;
-    }
 
     header {
         padding: 20px;
@@ -197,8 +178,9 @@ h1 span {
         display: block;
         padding: 10px;
         background: white;
-        border-radius: 8px;
     }
+
+    /* HERO MOBILE */
 
     .hero {
         flex-direction: column;
@@ -206,12 +188,8 @@ h1 span {
         padding: 40px 20px;
     }
 
-    .left {
-        max-width: 100%;
-    }
-
     h1 {
-        font-size: 28px;
+        font-size: 28px; /* 👈 menor só no mobile */
     }
 
     .desc {
@@ -238,10 +216,5 @@ h1 span {
 
     .input-group {
         flex-direction: column;
-    }
-
-    .form-contato input,
-    .form-contato textarea {
-        width: 100%;
     }
 }
