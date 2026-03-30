@@ -8,11 +8,9 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #f4f4f4;
     color: #222;
-    position: relative;
-    z-index: 1;
 }
 
-/* NAVBAR */
+/* NAV */
 
 header {
     padding: 30px 60px;
@@ -39,7 +37,6 @@ nav a {
     text-decoration: none;
     color: #555;
     font-weight: 500;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -53,8 +50,6 @@ nav a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 80px 60px;
-    position: relative;
-    z-index: 2;
 }
 
 .left {
@@ -63,7 +58,6 @@ nav a:hover {
 
 .hello {
     color: #888;
-    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
@@ -81,7 +75,7 @@ h1 span {
     margin-bottom: 30px;
 }
 
-/* BOTÕES */
+/* BOTÃO */
 
 .btn {
     display: inline-block;
@@ -89,50 +83,32 @@ h1 span {
     background: red;
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-top: 15px; /* ✅ ESPAÇO ADICIONADO */
+    border-radius: 6px;
+    margin-top: 15px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: black;
+    background: #cc0000;
 }
 
-/* IMAGEM HERO */
-
-.right {
-    position: relative;
+.btn:active {
+    transform: scale(0.97);
 }
+
+/* IMAGEM */
 
 .right img {
     width: 350px;
     border-radius: 10px;
-    z-index: 2;
-    position: relative;
 }
 
-/* efeito atrás da imagem */
-.right::before {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(255,0,0,0.2), transparent);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    filter: blur(40px);
-}
-
-/* PÁGINAS */
+/* PÁGINAS PADRÃO */
 
 .page {
     padding: 60px;
-    position: relative;
-    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
 }
 
 /* CARDS */
@@ -148,141 +124,107 @@ h1 span {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
-/* BOTÃO DENTRO DOS CARDS (PROJETOS) */
-
-.card .btn {
-    margin-top: 20px; /* MAIS ESPAÇO AINDA */
-}
-
-/* PROJETOS */
-
-.card h2 {
-    margin-bottom: 10px;
-}
-
-.card h3 {
-    margin-top: 15px;
-}
-
-.card ul {
-    margin-left: 20px;
-    margin-top: 10px;
-}
-
-.card pre {
-    background: #111;
-    color: #0f0;
-    padding: 15px;
-    border-radius: 10px;
-    overflow-x: auto;
-    margin-top: 10px;
-    font-size: 12px;
-}
-
-/* ANIMAÇÃO */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s ease forwards;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* FUMAÇA */
-
-.smoke-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.smoke-container span {
-    position: absolute;
-    bottom: -100px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(200,200,200,0.2), transparent);
-    border-radius: 50%;
-    filter: blur(25px);
-    animation: smoke 12s linear infinite;
-}
-
-.smoke-container span:nth-child(1) { left: 10%; }
-.smoke-container span:nth-child(2) { left: 30%; }
-.smoke-container span:nth-child(3) { left: 50%; }
-.smoke-container span:nth-child(4) { left: 70%; }
-.smoke-container span:nth-child(5) { left: 90%; }
-
-@keyframes smoke {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0.3;
-    }
-    100% {
-        transform: translateY(-120vh) scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* RESPONSIVO */
-
-@media (max-width: 900px) {
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .right img {
-        margin-top: 20px;
-        width: 220px;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    .page {
-        padding: 30px;
-    }
 }
 
 /* FORMULÁRIO */
 
-form {
+.form-contato {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
     gap: 15px;
 }
 
-form input,
-form textarea {
-    padding: 12px;
+.input-group input {
+    flex: 1;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 14px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
+    border-radius: 10px;
 }
 
-form textarea {
-    min-height: 120px;
-    resize: none;
+.form-contato textarea {
+    min-height: 140px;
 }
 
-form input:focus,
-form textarea:focus {
+.form-contato input:focus,
+.form-contato textarea:focus {
     outline: none;
     border-color: red;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .left {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .right img {
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .page {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .form-contato input,
+    .form-contato textarea {
+        width: 100%;
+    }
 }
