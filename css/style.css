@@ -39,15 +39,12 @@ nav a {
     font-weight: 500;
     padding: 8px 12px;
     border-radius: 6px;
+    transition: 0.3s;
 }
 
 nav a:hover {
     background: red;
     color: white;
-}
-
-nav a:hover {
-    color: red;
 }
 
 /* HERO */
@@ -82,7 +79,7 @@ h1 span {
     margin-bottom: 30px;
 }
 
-/* BOTÃO */
+/* BOTÕES */
 
 .btn {
     display: inline-block;
@@ -110,7 +107,7 @@ h1 span {
     border-radius: 10px;
 }
 
-/* PÁGINAS PADRÃO */
+/* PÁGINAS */
 
 .page {
     padding: 60px;
@@ -185,10 +182,10 @@ h1 span {
     }
 
     nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
     }
 
     nav ul li {
